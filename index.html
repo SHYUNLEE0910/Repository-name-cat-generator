@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>고양이 그림 만들기</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fefefe;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin: 30px 0;
+    }
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .option {
+      width: 200px;
+      text-align: center;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .option img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .option:hover, .option.selected {
+      border-color: #009688;
+      background-color: #e0f7fa;
+    }
+    #generateBtn {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 30px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>고양이 그림 만들기</h1>
+  
+  <div class="question" id="q1">
+    <h2>1. 어떤 종의 고양이가 좋아요?</h2>
+    <div class="options">
+      <div class="option" onclick="selectOption('q1','코숏')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Korean_domestic_cat.jpg/320px-Korean_domestic_cat.jpg" alt="코숏">
+        <p>코숏</p>
+      </div>
+      <div class="option" onclick="selectOption('q1','페르시안')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Persian_Cat.jpg/320px-Persian_Cat.jpg" alt="페르시안">
+        <p>페르시안</p>
+      </div>
+      <div class="option" onclick="selectOption('q1','러시안 블루')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Russian_Blue.jpg/320px-Russian_Blue.jpg" alt="러시안 블루">
+        <p>러시안 블루</p>
+      </div>
+      <div class="option" onclick="selectOption('q1','샴')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Siam_lilacpoint.jpg/320px-Siam_lilacpoint.jpg" alt="샴">
+        <p>샴</p>
+      </div>
+      <div class="option" onclick="selectOption('q1','뱅갈')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Bengal_cat_standing.jpg/320px-Bengal_cat_standing.jpg" alt="뱅갈">
+        <p>뱅갈</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="question" id="q2">
+    <h2>2. 고양이의 색깔은?</h2>
+    <div class="options">
+      <div class="option" onclick="selectOption('q2','검정색')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Black_cat_being_snowed_on.jpg/320px-Black_cat_being_snowed_on.jpg" alt="검정색">
+        <p>검정색</p>
+      </div>
+      <div class="option" onclick="selectOption('q2','흰색')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Cat_white.jpg/320px-Cat_white.jpg" alt="흰색">
+        <p>흰색</p>
+      </div>
+      <div class="option" onclick="selectOption('q2','회색')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Gray_Cat.jpg/320px-Gray_Cat.jpg" alt="회색">
+        <p>회색</p>
+      </div>
+      <div class="option" onclick="selectOption('q2','흰색과 검정색')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Black_and_white_cat.jpg/320px-Black_and_white_cat.jpg" alt="흰색과 검정색">
+        <p>흰색과 검정색</p>
+      </div>
+      <div class="option" onclick="selectOption('q2','금색')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Ginger_cat.jpg/320px-Ginger_cat.jpg" alt="금색">
+        <p>금색</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="question" id="q3">
+    <h2>3. 고양이의 모습은 어떤가요?</h2>
+    <div class="options">
+      <div class="option" onclick="selectOption('q3','졸린 모습')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Sleepy_cat.jpg/320px-Sleepy_cat.jpg" alt="졸린 모습">
+        <p>졸린 모습</p>
+      </div>
+      <div class="option" onclick="selectOption('q3','밥을 먹는 모습')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Cat_eating.jpg/320px-Cat_eating.jpg" alt="밥을 먹는 모습">
+        <p>밥을 먹는 모습</p>
+      </div>
+      <div class="option" onclick="selectOption('q3','신이 난 모습')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cat_playing.jpg/320px-Cat_playing.jpg" alt="신이 난 모습">
+        <p>신이 난 모습</p>
+      </div>
+      <div class="option" onclick="selectOption('q3','속상한 모습')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Sad_looking_cat.jpg/320px-Sad_looking_cat.jpg" alt="속상한 모습">
+        <p>속상한 모습</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="question" id="q4">
+    <h2>4. 고양이는 어디에 있나요?</h2>
+    <div class="options">
+      <div class="option" onclick="selectOption('q4','놀이터')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Playground.jpg/320px-Playground.jpg" alt="놀이터">
+        <p>놀이터</p>
+      </div>
+      <div class="option" onclick="selectOption('q4','시장')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Korean_market.jpg/320px-Korean_market.jpg" alt="시장">
+        <p>시장</p>
+      </div>
+      <div class="option" onclick="selectOption('q4','유치원 운동장')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Kindergarten_playground.jpg/320px-Kindergarten_playground.jpg" alt="유치원 운동장">
+        <p>유치원 운동장</p>
+      </div>
+      <div class="option" onclick="selectOption('q4','집')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Home_interior.jpg/320px-Home_interior.jpg" alt="집">
+        <p>집</p>
+      </div>
+    </div>
+  </div>
+
+  <button id="generateBtn" onclick="generatePrompt()">AI 이미지 생성</button>
+
+  <script>
+    const answers = {};
+
+    function selectOption(questionId, value) {
+      answers[questionId] = value;
+      const options = document.querySelectorAll(`#${questionId} .option`);
+      options.forEach(opt => opt.classList.remove("selected"));
+      [...options].find(opt => opt.textContent.trim() === value).classList.add("selected");
+    }
+
+    function generatePrompt() {
+      if (!answers.q1 || !answers.q2 || !answers.q3 || !answers.q4) {
+        alert("모든 질문에 답해주세요!");
+        return;
+      }
+      const prompt = `${answers.q2} ${answers.q1} 고양이, ${answers.q3}, ${answers.q4}에 있는 모습. 디지털 일러스트 스타일.`;
+      alert("AI 이미지 프롬프트:\n" + prompt);
+    }
+  </script>
+</body>
+</html>
